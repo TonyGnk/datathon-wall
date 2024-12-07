@@ -137,12 +137,12 @@ class _TeamsListState extends State<TeamsList> with TickerProviderStateMixin {
       //   child: const Icon(Icons.refresh),
       // ),
       body: teamsWithArrivals.isEmpty
-          ? const Center(child: CircularProgressIndicator())
+          ? const Center()
           : Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(14.0),
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 7,
+                  crossAxisCount: 6,
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
                   childAspectRatio: 4 / 1,
@@ -190,11 +190,35 @@ class _TeamsListState extends State<TeamsList> with TickerProviderStateMixin {
               textAlign: TextAlign.center,
             ),
             const Spacer(),
-            Text(
-              '${team['arrivedCount']}/${team['totalMembers']}',
-              style: const TextStyle(fontSize: 14),
-              textAlign: TextAlign.center,
-            ),
+            if (team['arrivedCount'] == team['totalMembers'])
+              AnimatedOpacity(
+                duration: const Duration(milliseconds: 500),
+                opacity: 1.0,
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                  margin: const EdgeInsets.only(left: 8),
+                  width: 24,
+                  height: 24,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.check,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                  ),
+                ),
+              )
+            else
+              Text(
+                '${team['arrivedCount']}/${team['totalMembers']}',
+                style: const TextStyle(fontSize: 14),
+                textAlign: TextAlign.center,
+              ),
           ],
         ),
       ),

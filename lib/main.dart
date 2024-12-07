@@ -5,18 +5,12 @@ import 'package:window_manager/window_manager.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
-  // await Firebase.initializeApp(
-  //   options: DefaultFirebaseOptions.windows,
-  // );
 
   WindowOptions windowOptions = const WindowOptions(
-    // size: Size(500, 600), //1500, 900
     backgroundColor: Colors.transparent,
     skipTaskbar: false,
-    alwaysOnTop: true,
-    // minimumSize: Size(500, 600),
-    // maximumSize: Size(1500, 900),
-    fullScreen: false,
+    alwaysOnTop: false,
+    fullScreen: true,
     title: "Datathon UoM",
     titleBarStyle: TitleBarStyle.normal,
   );
@@ -35,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Datathon Wall',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
         useMaterial3: true,

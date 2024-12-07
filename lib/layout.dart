@@ -1,4 +1,3 @@
-import 'package:datathon_wall/clock.dart';
 import 'package:datathon_wall/firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
@@ -19,7 +18,7 @@ class CustomLayout extends StatelessWidget {
           child: Container(
             width: double.infinity,
             color: Colors.black12,
-            child: Center(child: const TeamsList()),
+            child: const Center(child: TeamsList()),
           ),
         ),
         const SizedBox(height: 24),
@@ -52,7 +51,6 @@ class HeaderRow extends StatelessWidget {
       children: [
         Image.asset('assets/logo-trans.png', height: 50.0),
         const Spacer(),
-        // const DigitalClock(),
         const SizedBox(width: 24 / 2),
         IconButton(
           icon: const Icon(Icons.close),
@@ -74,10 +72,10 @@ class FooterRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset('assets/raise-trans.png', height: 70.0),
-        Image.asset('assets/eellak-tans.png', height: 70.0),
-        Image.asset('assets/digiGov-trans.png', height: 70.0),
-        Image.asset('assets/ai4-trans.png', height: 70.0),
+        Image.asset('assets/raise-trans.png', height: 90.0),
+        Image.asset('assets/eellak-tans.png', height: 90.0),
+        Image.asset('assets/digiGov-trans.png', height: 90.0),
+        Image.asset('assets/ai4-trans.png', height: 90.0),
       ],
     );
   }
@@ -93,10 +91,10 @@ class Footer2Row extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset('assets/lancom-trans.png', height: 70.0),
-        Image.asset('assets/OkThess-trans.png', height: 60.0),
-        Image.asset('assets/sevenloft-trans.png', height: 74.0),
-        Image.asset('assets/houtos-trans.png', height: 90.0),
-        Image.asset('assets/foititiko-trans.png', height: 70.0),
+        Image.asset('assets/OkThess-trans.png', height: 50.0),
+        Image.asset('assets/sevenloft-trans.png', height: 72.0),
+        Image.asset('assets/houtos-trans.png', height: 85.0),
+        Image.asset('assets/foititiko-trans.png', height: 65.0),
       ],
     );
   }
